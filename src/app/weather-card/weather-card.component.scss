@@ -1,0 +1,69 @@
+$dark : #252a34;
+$accent : #ff2e63;
+$light : #eaeaea;
+$main : #08d9d6;
+
+:host{
+    display: inline-block;
+}
+
+.card{
+    box-sizing: border-box;
+    font-weight: slim;
+    background: white;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    border-radius: 16px;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    text-align: center;
+    padding: 1em;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(3,auto);
+    grid-template-areas: 
+    "icon icon temperature temperature"
+    "lowtemp lowtemp hightemp hightemp"
+    "description description description description";
+}
+
+.card .temp{
+    grid-area: temperature;
+    p{
+        margin:0;
+    }
+    .big{
+        font-size: 2em;
+        color: $main;
+        font-weight: bold;
+    }
+}
+
+.card .icon{
+    grid-area: icon;
+}
+
+.card .description{
+    grid-area:description;
+    h2{
+        font-size: 1.2em;
+        text-transform: uppercase;
+        letter-spacing: 0.3em;
+        color: $accent;
+    }
+    
+}
+.low-temp{
+    grid-area: lowtemp;
+}
+.high-temp{
+    grid-area: hightemp;
+}
+.low-temp, .high-temp{
+    color: $accent;
+    span{
+        color:$dark;
+        opacity: 0.56;
+        font-size: 0.6em;
+    }
+}

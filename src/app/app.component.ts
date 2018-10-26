@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { GeolocationService } from './services/geolocation.service';
+import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +10,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  
+  constructor(private geolocationService : GeolocationService){}
+
+  ngOnInit(){   
+  }
 }
